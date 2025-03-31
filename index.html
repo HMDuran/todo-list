@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo</title>
+
+  <!-- SCSS -->
+  <link rel="stylesheet" href="styles/index.css" />
+
+  <!-- Font Family -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet" />
+</head>
+ 
+<body>
+  <main class="todo">
+    <div class="todo__logo">
+      <img src="./assets/logo.svg" alt="logo" />
+    </div>
+    <div class="todo__new-task">
+      <form id="todo-form" class="form">
+        <input id="todo-input" class="form__input" type="text" placeholder="What's on your mind?" />
+        <button class="form__submit" type="submit">Add
+          <img class="form__sumbit--icon" src="./assets/add.svg" alt="Add Task Button Icon" />
+        </button>
+      </form>
+    </div>
+    <div class="todo__tasks">
+      <div class="tasks__total">
+          <p class="tasks__total--text">Total</p>
+          <p id="task-total" class="tasks__total--number">
+            <!--Todo Task Total--> 
+          </p>
+      </div>
+      <div class="tasks__list">
+        <ul id="todo-list" class="list">
+          <!--Todo Task List-->
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <!-- js -->
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

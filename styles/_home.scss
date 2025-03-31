@@ -1,0 +1,222 @@
+.todo {
+    display: grid;
+    grid-template-rows: repeat(3, 110px);
+    align-items: center;
+    justify-content: center;
+    padding: 68px 40px 0;
+    gap: 5px;
+
+    @include xs {
+        padding: 72px 16px 0;
+    }
+
+    &__logo {
+        justify-self: center;
+    }
+
+    &__new-task {
+        .form {
+            display: flex;
+            gap: 8px;
+
+            &__input {
+                padding: 16px;
+                width: 100%;
+
+                border-radius: 8px;
+                border: 1px solid $color-purple-1;
+
+                font-size: 1rem;
+                font-weight: 700;
+                color: $color-black;
+
+                &:focus {
+                    border-color: $color-purple-2; 
+                    outline: none;
+                    box-shadow: 0 0 5px rgba(85, 40, 189, 0.5);
+                }
+
+                @include placeholder {
+                    color: $color-gray;
+                    font-weight: 400;
+                }
+            }
+
+            &__submit {
+                display: flex;
+                align-items: center;
+                padding: 16px;
+                gap: 8px;
+
+                background-color: $color-purple-1;
+                border-radius: 8px;
+                border: none;
+
+                @include font-inter;
+                font-size: 1rem;
+                color: $color-white-3;
+                text-transform: uppercase;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: $color-purple-2;
+                }
+            }
+        }
+        @include sm {
+            width: 500px;
+        }
+
+        @include md {
+            width: 650px;
+        }
+
+        @include lg {
+            width: 800px;
+        }
+    }
+
+    &__tasks {
+        display: grid;
+        grid-template-rows: repeat(2, 80px);
+
+        .tasks__total {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+
+            &--text, &--number {
+                @include font-inter;
+            }
+
+            &--text {
+                font-size: 1.25rem;
+                color: $color-purple-1;
+            }
+
+            &--number {
+                display: none;
+                justify-content: center;
+                align-items: center;
+                padding: 4px 16px;
+    
+                width: 28px;
+                height: 28px;
+    
+                background-color: $color-purple-1;
+                border-radius: 50%;
+                
+                font-size: 1rem;
+                color: $color-white-2;
+             }
+        }
+
+        .tasks__list {
+            .list {
+                display: grid;
+                gap: 12px;
+                
+                &__item {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    padding: 16px;
+                    gap: 12px;
+                    width: 100%; 
+                    min-width: 0;
+
+                    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
+                    background-color: $color-white-1;
+                    border: 1px solid $color-white-1;
+                    border-radius: 8px;
+
+                    color: $color-gray;
+                    font-size: 1rem;
+                    font-weight: 700;
+
+                    &--checked {
+                        border: none;
+                        box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
+                        text-decoration: line-through;
+                        background-color: $color-purple-4;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: $color-purple-5;
+                        border: none;
+                    }
+
+                    .item {
+                        display: grid;
+                        grid-template-columns: 30px auto;
+
+                        &__checkbox--round {
+                            width: 18px;
+                            height: 18px;
+                
+                            vertical-align: middle;
+                            outline: none;
+                            border-radius: 50%;
+                            border: 1px solid $color-purple-3;
+        
+                            appearance: none;
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+        
+                            cursor: pointer;
+                                        
+                            &:checked {
+                                background-image: url('../assets/checked.svg');
+                                background-size: cover;
+                                background-position: center;
+                            }
+                        }
+
+                        &--text {
+                            flex-grow: 1;
+                            word-break: break-all;
+                        }   
+                     }
+
+                    .item-button {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+
+                        &__edit, &__delete {
+                            cursor: pointer;
+                            
+                            border:  none;
+                            background-color: transparent;
+                        }
+                    }
+                }
+            }
+
+            @include sm {
+                width: 500px;
+            }
+    
+            @include md {
+                width: 650px;
+            }
+    
+            @include lg {
+                width: 800px;
+            }
+        }
+    }
+    .edit-input {
+        padding: 6px;
+        
+        border-radius: 4px;
+        border: 1px solid #8d8d8d;
+        
+        font-weight: 700;
+        color: $color-black;
+
+        outline: none;
+        box-shadow: 0 0 5px rgba(85, 40, 189, 0.5);
+    }
+}
