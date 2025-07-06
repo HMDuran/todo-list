@@ -2,6 +2,9 @@
 
 A simple To-Do List app using **JavaScript, HTML, and SASS**.
 
+## 🌐 Live Demo
+🔗 [https://todo-list-peach-zeta.vercel.app](https://todo-list-peach-zeta.vercel.app)
+
 ## 🚀 Features
 - ➕ Add tasks
 - ✅ Mark tasks as completed
